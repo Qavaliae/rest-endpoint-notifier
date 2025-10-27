@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: latest
           cache: pnpm
+          cache-dependency-path: |
+            **/pnpm-lock.yaml
       - uses: pnpm/action-setup@v2
         with:
           version: latest
