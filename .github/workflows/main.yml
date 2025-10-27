@@ -16,14 +16,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
           node-version: latest
           cache: pnpm
-          cache-dependency-path: |
-            **/pnpm-lock.yaml
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
       - run: pnpm ci
       - run: pnpm start
